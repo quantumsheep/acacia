@@ -14,7 +14,7 @@
 
 <body style="width: 600px;">
   <div class="box">
-    <button id="switch" class="fixed top right">Switch to white</button>
+    <button id="switch" class="fixed top right">Switch to bright</button>
 
     <h1>Title 1</h1>
     <h2>Title 2</h2>
@@ -105,11 +105,11 @@
 
     document.getElementById('switch').addEventListener('click', function (e) {
       if (dark) {
-        theme.href = "/theme-white.css";
+        theme.href = "/theme-bright.css";
         this.innerText = "Switch to dark";
       } else {
         theme.href = "/theme-dark.css";
-        this.innerText = "Switch to white";
+        this.innerText = "Switch to bright";
       }
 
 
