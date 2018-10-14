@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acacia</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link id="theme" rel="stylesheet" href="/theme-dark.css">
+  <script>console.log("Don't mind me, I'm here to load this page nicely :)")</script>
+</head>
+
+<body style="width: 600px;">
+  <div class="box">
+    <button id="switch" class="fixed top right">Switch to white</button>
+
+    <h1>Title 1</h1>
+    <h2>Title 2</h2>
+    <h3>Title 3</h3>
+    <h4>Title 4</h4>
+    <h5>Title 5</h5>
+    <h6>Title 6</h6>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo turpis a lectus sodales, vel cursus massa accumsan.</p>
+
+    <hr>
+
+    <h2>Buttons</h2>
+    <button>Button</button>
+
+    <hr>
+
+    <h2>Progress bar</h2>
+    <progress max="100" value="0"></progress>
+    <progress max="100" value="25"></progress>
+    <progress max="100" value="50"></progress>
+    <progress max="100" value="75"></progress>
+    <progress max="100" value="100"></progress>
+
+    <hr>
+
+    <h2>Inputs</h2>
+    <div>
+      <label for="text-input">Basic text input</label>
+      <input type="text" id="text-input" autocomplete="off">
+    </div>
+
+    <div>
+      <label for="placeholder-input">Placeholder</label>
+      <input type="number" id="placeholder-input" placeholder="2 + 2 = 22 - Said PHP" autocomplete="off">
+    </div>
+
+    <div>
+      <label for="placeholder-input">Readonly</label>
+      <input type="text" placeholder="Heyy, you can't write on me >:)" readonly="readonly" autocomplete="off">
+    </div>
+
+    <div>
+      <label for="range-input">Range</label>
+      <input type="range" id="range-input" min="0" max="100" value="50" autocomplete="off">
+    </div>
+
+    <div>
+      <label for="select-input">Select</label>
+      <select id="select-input" autocomplete="off">
+        <option></option>
+        <option>Hi, I'm John</option>
+        <option disabled>I'm disabled (no joke plz)</option>
+        <option>Oh, hello</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="textarea-input">Textarea</label>
+      <textarea id="textarea-input" autocomplete="off"></textarea>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1>Real world use</h1>
+    <hr>
+    <h3>Lorem ipsum</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at velit tristique, posuere elit quis, placerat justo. Donec laoreet sem at egestas feugiat. Etiam ullamcorper augue metus, in ultrices massa ultrices condimentum. Donec eu nisi fringilla, maximus tellus vitae, finibus mauris. Curabitur congue sapien nec enim semper, ut lobortis ex tempus. Mauris id malesuada elit. Sed tempor est arcu, nec pretium magna tincidunt ac. Mauris ut cursus urna. Vivamus at dapibus odio. Maecenas feugiat est tempus, dictum diam quis, vulputate ex.
+
+      Nullam imperdiet lorem id rhoncus luctus. Cras consequat libero eget ex pulvinar, sed interdum elit lobortis. Nulla justo tortor, consequat ut felis et, elementum varius justo. Proin molestie lacus lacinia purus consectetur vulputate. Nulla viverra odio vitae quam luctus vulputate. Suspendisse eu hendrerit leo. Mauris sit amet accumsan purus. Aliquam erat volutpat. Maecenas faucibus velit ut augue aliquam ultrices. Quisque eu elit scelerisque, aliquam metus sit amet, suscipit nibh.
+
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur ornare libero mauris, vel lacinia felis faucibus aliquet. Sed ultricies sit amet neque sit amet viverra. Integer ac commodo massa. In ac tellus posuere, pharetra augue et, congue tortor. Morbi pretium tellus dapibus, sagittis lorem non, fringilla nunc. Mauris a imperdiet lacus, nec euismod leo. Mauris neque elit, facilisis ut sodales at, commodo ac nunc. Ut dignissim ante non ex porttitor, porta dignissim lorem ultrices.
+    </p>
+    <h4>Comments</h4>
+    <div>
+      <label for="comment">Your comment</label>
+      <textarea id="comment" autocomplete="off"></textarea>
+    </div>
+  </div>
+
+  <script>
+    let dark = true;
+    const theme = document.getElementById('theme');
+
+    document.getElementById('switch').addEventListener('click', function (e) {
+      if (dark) {
+        theme.href = "/theme-white.css";
+        this.innerText = "Switch to dark";
+      } else {
+        theme.href = "/theme-dark.css";
+        this.innerText = "Switch to white";
+      }
+
+
+      dark = !dark;
+    });
+  </script>
+</body>
+
+</html>
