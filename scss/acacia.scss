@@ -356,3 +356,39 @@ img.framed {
   display: -ms-flexbox;
   display: flex;
 }
+
+/**
+ * Padding helpers
+ */
+
+@each $key,
+$pos in ("": "",
+"t": "-top",
+"b": "-bottom",
+"r": "-right",
+"l": "-left") {
+  $key: $key;
+  @for $i from 0 through 6 {
+    .p#{$key}\-#{$i} {
+      padding#{$pos}: 5px * $i;
+    }
+  }
+}
+
+/**
+ * Margin helpers
+ */
+
+@each $key,
+$pos in ("": "",
+"t": "-top",
+"b": "-bottom",
+"r": "-right",
+"l": "-left") {
+  $key: $key;
+  @for $i from 0 through 6 {
+    .m#{$key}\-#{$i} {
+      margin#{$pos}: 5px * $i;
+    }
+  }
+}
