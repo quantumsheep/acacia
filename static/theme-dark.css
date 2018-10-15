@@ -11,10 +11,13 @@ html {
 
 body {
   color: #fff;
-  background-color: #000;
+  background-color: #111;
   height: 100%;
   max-width: 100%;
   font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 24px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,27 +26,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
   font-size: 2rem;
 }
 
-h4 {
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
   font-size: 1.5rem;
 }
 
-h5 {
+h4 {
   font-size: 1.25rem;
 }
 
-h6 {
+h5 {
   font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.75rem;
 }
 
 p {
@@ -54,7 +57,7 @@ button {
   color: #000;
   border: none;
   background-color: #fff;
-  padding: 0.35rem 0.75rem;
+  padding: 0.5rem 1.75rem;
   border-radius: 3px;
   margin-bottom: 1rem;
   transition: all .2s;
@@ -72,7 +75,7 @@ button:active {
 progress {
   height: 20px;
   width: 100%;
-  background-color: #3a3a3a;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
 }
 
@@ -99,7 +102,7 @@ progress[value]::-webkit-progress-value {
 
 progress[value]::-webkit-progress-bar {
   border-radius: 3px;
-  background-color: #3a3a3a;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 hr {
