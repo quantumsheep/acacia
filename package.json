@@ -4,12 +4,17 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "build": "sass scss:static/css",
+    "watch": "sass --watch scss:static/css"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "sass": "^1.14.2"
   }
 }

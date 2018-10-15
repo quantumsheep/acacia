@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -15,16 +14,15 @@ body {
   background-color: #111;
   height: 100%;
   max-width: 100%;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: 400;
   font-size: 1rem;
   line-height: 24px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
-}
-
+/**
+ * Headers (h1 -> h6)
+ */
 h1 {
   font-size: 2rem;
   margin: 2rem 0;
@@ -55,6 +53,15 @@ h6 {
   margin: 0.75rem 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
 p {
   white-space: pre-line;
   text-align: justify;
@@ -62,15 +69,16 @@ p {
 }
 
 button {
-  color: #000;
+  color: #111;
   border: none;
   background-color: #fff;
   padding: 0.5rem 1.75rem;
   border-radius: 3px;
   margin-bottom: 1rem;
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 button:hover {
@@ -93,9 +101,7 @@ progress[value] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
   border: none;
-  
   color: #fff;
 }
 
@@ -103,7 +109,6 @@ progress[value]::-moz-progress-bar {
   border-radius: 3px;
   background-color: #fff;
 }
-
 
 progress[value]::-webkit-progress-value {
   border-radius: 3px;
@@ -119,7 +124,7 @@ hr {
   margin: 2rem 3px;
   border: none;
   height: 1px;
-  background-color: rgb(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 label {
@@ -135,14 +140,14 @@ input,
 select,
 textarea {
   width: 100%;
-  color: #000;
+  color: #111;
 }
 
 input:not([type]),
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
 select,
 textarea {
   border: none;
@@ -152,20 +157,19 @@ textarea {
 }
 
 input[readonly]:not([type]),
-input[readonly][type="text"],
-input[readonly][type="email"],
-input[readonly][type="password"],
-input[readonly][type="number"],
+input[readonly][type=text],
+input[readonly][type=email],
+input[readonly][type=password],
+input[readonly][type=number],
 select[readonly],
 textarea[readonly] {
-  background-color: rgb(255, 255, 255, 0.70);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-input[type="range"] {
+input[type=range] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
   background: transparent;
   margin: 0;
   padding: 0;
@@ -174,31 +178,43 @@ input[type="range"] {
 /**
  * Range thumb
  */
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
+input[type=range]::-ms-thumb {
   height: 22px;
   width: 16px;
-  border: none;
-  background-color: #404040;
-  cursor: pointer;
-}
-
-input[type=range]::-moz-range-thumb {
-  -webkit-appearance: none;
-  height: 22px;
-  width: 16px;
-  border: none;
   border-radius: 0;
   background-color: #404040;
   cursor: pointer;
+  border: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 22px;
+  width: 16px;
+  border-radius: 0;
+  background-color: #404040;
+  cursor: pointer;
+  border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 22px;
+  width: 16px;
+  border-radius: 0;
+  background-color: #404040;
+  cursor: pointer;
+  border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
 }
 
 input[type=range]::-ms-thumb {
-  -webkit-appearance: none;
-  height: 22px;
-  width: 16px;
-  background-color: #404040;
-  cursor: pointer;
+  appearance: none;
 }
 
 input[type=range]:focus::-ms-thumb {
@@ -208,11 +224,12 @@ input[type=range]:focus::-ms-thumb {
 /**
  * Range track
  */
-input[type=range]::-webkit-slider-runnable-track {
+input[type=range]::-ms-track {
   width: 100%;
   height: 22px;
   cursor: pointer;
   background-color: #fff;
+  border: none;
   border-radius: 3px;
 }
 
@@ -221,17 +238,22 @@ input[type=range]::-moz-range-track {
   height: 22px;
   cursor: pointer;
   background-color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 22px;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
   border-radius: 3px;
 }
 
 input[type=range]::-ms-track {
-  width: 100%;
-  height: 22px;
-  cursor: pointer;
   background: transparent;
-  border: none;
   color: transparent;
-  border-radius: 3px;
 }
 
 input[type=range]::-ms-fill-lower {
@@ -288,11 +310,11 @@ img.framed {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 /**
@@ -307,13 +329,12 @@ img.framed {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-
 
 /**
  * Position helpers
@@ -365,3 +386,5 @@ img.framed {
   display: -ms-flexbox;
   display: flex;
 }
+
+/*# sourceMappingURL=acacia.css.map */

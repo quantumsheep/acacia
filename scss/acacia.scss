@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+$background: #111;
+$text: #fff;
+$props-background: #fff;
+$props-text: #111;
+@mixin transition($property) {
+  -webkit-transition: $property;
+  -ms-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+@mixin appearance($property) {
+  appearance: $property;
+  -webkit-appearance: $property;
+  -moz-appearance: $property;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  color: #fff;
+  background-color: $background;
+  height: 100%;
+  max-width: 100%;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+/**
+ * Headers (h1 -> h6)
+ */
+
+@for $i from 1 through 6 {
+  $reduce: 0.25 * ($i - 1);
+  h#{$i} {
+    font-size: 2rem - $reduce;
+    margin: 2rem - $reduce 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  white-space: pre-line;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+button {
+  color: $props-text;
+  border: none;
+  background-color: $props-background;
+  padding: 0.5rem 1.75rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  @include transition(all .2s);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+button:active {
+  background-color: #bebebe;
+}
+
+progress {
+  height: 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+progress[value] {
+  @include appearance(none);
+  border: none;
+  color: #fff;
+}
+
+progress[value]::-moz-progress-bar {
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+hr {
+  margin: 2rem 3px;
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/**
+ * Inputs
+ */
+
+input,
+select,
+textarea {
+  width: 100%;
+  color: $props-text;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  border: none;
+  border-radius: 3px;
+  padding: 8px 5px;
+  background-color: #fff;
+}
+
+input[readonly]:not([type]),
+input[readonly][type="text"],
+input[readonly][type="email"],
+input[readonly][type="password"],
+input[readonly][type="number"],
+select[readonly],
+textarea[readonly] {
+  background-color: rgba(255, 255, 255, 0.70);
+}
+
+input[type="range"] {
+  @include appearance(none);
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Range thumb
+ */
+
+@each $i in ("-ms-thumb",
+"-moz-range-thumb",
+"-webkit-slider-thumb") {
+  input[type=range]::#{$i} {
+    height: 22px;
+    width: 16px;
+    border-radius: 0;
+    background-color: #404040;
+    cursor: pointer;
+    border: none;
+  }
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+}
+
+input[type=range]::-ms-thumb {
+  appearance: none;
+}
+
+input[type=range]:focus::-ms-thumb {
+  border: none;
+}
+
+/**
+ * Range track
+ */
+
+@each $i in ("-ms-track",
+"-moz-range-track",
+"-webkit-slider-runnable-track") {
+  input[type=range]::#{$i} {
+    width: 100%;
+    height: 22px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-radius: 3px;
+  }
+}
+
+input[type=range]::-ms-track {
+  background: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #fff;
+  border-radius: 3px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #fff;
+  border-radius: 3px;
+}
+
+/**
+ * Textarea
+ */
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/**
+ * Images
+ */
+
+img {
+  max-width: 100%;
+}
+
+img.framed {
+  border-radius: 3px;
+}
+
+.avatar {
+  height: 50px;
+  min-height: 50px;
+  width: 50px;
+  min-width: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+
+.author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.author>summary {
+  list-style: none;
+  line-height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/**
+ * Helpers
+ */
+
+.box {
+  padding: 1rem;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/**
+ * Position helpers
+ */
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}
+
+/**
+ * Coloration
+ */
+
+.grey {
+  color: #ccc;
+}
+
+.red {
+  color: #ff9090;
+}
+
+/**
+ * Displaying class
+ */
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
