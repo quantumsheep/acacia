@@ -13,6 +13,7 @@
 </head>
 
 <body style="width: 600px;">
+  <img src="/acacia.png" width="200">
   <div class="box">
     <button id="switch" class="fixed top right">Switch to bright</button>
 
@@ -75,6 +76,32 @@
     <div>
       <label for="textarea-input">Textarea</label>
       <textarea id="textarea-input" autocomplete="off"></textarea>
+    </div>
+
+    <hr>
+
+    <h2>Images</h2>
+    <p>Images have a 100% width (writable with the <span class="grey">width</span> property)</p>
+
+    <h3>Framed</h3>
+    <p>Class <span class="grey">framed</span> adds 3px of <span class="grey">border-radius</span> to images.</p>
+    <img class="framed" src="/good-rabbit.png" width="100%">
+
+    <br>
+    <br>
+
+    <h3>Avatars</h3>
+    <p>Avatars use the class <span class="grey">avatar</span>. They have a <span class="grey">50px</span> width and height.</p>
+    <div class="avatar" style="background-image: url(/good-rabbit.png);"></div>
+
+    <h4>Author</h4>
+    <p>Same as avatars but with text on the right side.</p>
+    <div class="author">
+      <div class="avatar" style="background-image: url(/good-rabbit.png);"></div>
+      <summary>
+        <div>Good Rabbit</div>
+        <small>He's a good rabbit, you'll see</small>
+      </summary>
     </div>
 
     <br>
