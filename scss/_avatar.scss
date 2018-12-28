@@ -1,0 +1,31 @@
+.avatar {
+  height: 50px;
+  min-height: 50px;
+  width: 50px;
+  min-width: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+
+.author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  > summary {
+    list-style: none;
+    line-height: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}

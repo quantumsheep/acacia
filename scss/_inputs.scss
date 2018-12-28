@@ -1,0 +1,116 @@
+@import "_properties.scss";
+@import "_helpers.scss";
+
+/**
+ * Inputs
+ */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+input,
+select,
+textarea {
+  height: 36px;
+  width: 100%;
+  color: $props-text;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  border: none;
+  border-radius: 3px;
+  padding: 8px 5px;
+  background-color: #fff;
+
+  &[readonly] {
+    background-color: rgba(255, 255, 255, 0.70);
+    cursor: default;
+    caret-color: transparent;
+  }
+}
+
+input[type=range] {
+  @include appearance(none);
+  background: transparent;
+  margin: 0;
+  padding: 0;
+
+  /**
+  * Range thumb
+  */
+  @each $i in ("-ms-thumb",
+  "-moz-range-thumb",
+  "-webkit-slider-thumb") {
+    &::#{$i} {
+      height: 22px;
+      width: 16px;
+      cursor: pointer;
+      background-color: #404040;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+
+  &::-moz-range-thumb {
+    -moz-appearance: none;
+  }
+
+  &::-ms-thumb {
+    appearance: none;
+  }
+
+  &:focus::-ms-thumb {
+    border: none;
+  }
+
+  /**
+   * Range track
+   */
+  @each $i in ("-ms-track",
+  "-moz-range-track",
+  "-webkit-slider-runnable-track") {
+    &::#{$i} {
+      height: 22px;
+      width: 100%;
+      cursor: pointer;
+      background-color: #fff;
+      border: none;
+      border-radius: 3px;
+    }
+  }
+
+  &::-ms-track {
+    background: transparent;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    background: #fff;
+    border-radius: 3px;
+  }
+
+  &::-ms-fill-upper {
+    background: #fff;
+    border-radius: 3px;
+  }
+}
+
+/**
+ * Textarea
+ */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}

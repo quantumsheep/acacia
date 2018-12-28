@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node .",
-    "build": "sass scss:static/css",
-    "watch": "sass --watch scss:static/css"
+    "build": "sass scss/main.scss:static/css/acacia.css",
+    "watch": "npm run build -- --watch"
   },
   "keywords": [],
   "author": "",

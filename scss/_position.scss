@@ -1,0 +1,14 @@
+/**
+ * Position helpers
+ */
+@each $val in (fixed, relative, absolute) {
+    .#{$val} {
+        position: $val;
+    }
+}
+
+@each $val in (top, bottom, right, left) {
+    .#{$val} {
+        #{$val}: 0;
+    }
+}

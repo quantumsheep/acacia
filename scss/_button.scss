@@ -1,0 +1,21 @@
+@import "_properties.scss";
+@import "_helpers.scss";
+
+button {
+  color: $props-text;
+  border: none;
+  background-color: $props-background;
+  padding: 0.5rem 1.75rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  @include transition(all .2s);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+button:active {
+  background-color: #bebebe;
+}

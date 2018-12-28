@@ -1,0 +1,20 @@
+@mixin transition($property) {
+  transition: $property;
+  -webkit-transition: $property;
+  -ms-transition: $property;
+  -moz-transition: $property;
+  -o-transition: $property;
+}
+
+@mixin appearance($property) {
+  appearance: $property;
+  -webkit-appearance: $property;
+  -moz-appearance: $property;
+}
+
+@mixin user-select($property) {
+  user-select: $property;
+  -ms-user-select: $property;
+  -webkit-user-select: $property;
+  -moz-user-select: $property;
+}

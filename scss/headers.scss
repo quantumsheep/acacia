@@ -1,0 +1,19 @@
+/**
+ * Headers (h1 -> h6)
+ */
+@for $i from 1 through 6 {
+  $reduce: 0.25 * ($i - 1);
+  h#{$i} {
+    font-size: 2rem - $reduce;
+    margin: 2rem - $reduce 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+}

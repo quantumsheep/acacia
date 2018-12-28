@@ -1,0 +1,16 @@
+/**
+ * Margin helpers
+ */
+@each $key, $pos in (
+  "": "",
+  "t": "-top",
+  "b": "-bottom",
+  "r": "-right",
+  "l": "-left") {
+  $key: $key;
+  @for $i from 0 through 6 {
+    .m#{$key}\-#{$i} {
+      margin#{$pos}: 5px * $i;
+    }
+  }
+}

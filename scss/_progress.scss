@@ -1,0 +1,27 @@
+progress {
+  height: 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+
+  &[value] {
+    @include appearance(none);
+    border: none;
+    color: #fff;
+
+    &::-moz-progress-bar {
+      border-radius: 3px;
+      background-color: #fff;
+    }
+
+    &::-webkit-progress-value {
+      border-radius: 3px;
+      background-color: #fff;
+    }
+
+    &::-webkit-progress-bar {
+      border-radius: 3px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
